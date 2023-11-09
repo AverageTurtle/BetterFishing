@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+#issueTrackerURL = ""
+license = "Insert License Here"
+
+[[mods]]
+modId = "betterfishing"
+version = "${version}"
+displayName = "Better Fishing"
+authors = "AverageTurtle"
+description = '''
+fish
+'''
+#logoFile = ""
+
+[[dependencies.betterfishing]]
+modId = "forge"
+mandatory = true
+versionRange = "[48,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.betterfishing]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.betterfishing]]
+modId = "architectury"
+mandatory = true
+versionRange = "[10.0.0,)"
+ordering = "AFTER"
+side = "BOTH"

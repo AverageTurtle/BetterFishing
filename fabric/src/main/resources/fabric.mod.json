@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "betterfishing",
+  "version": "${version}",
+  "name": "Better Fishing",
+  "description": "fish.",
+  "authors": [
+    "AverageTurtle"
+  ],
+  "contact": {
+
+  },
+  "license": "N/A",
+  "icon": "assets/betterfishing/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.betterfishing.fabric.BetterFishingModFabric"
+    ]
+  },
+  "mixins": [
+    "betterfishing.mixins.json",
+    "betterfishing-common.mixins.json"
+  ],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.20.2",
+    "architectury": ">=10.0.0"
+  }
+}
