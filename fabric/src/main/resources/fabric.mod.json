@@ -16,6 +16,9 @@
   "entrypoints": {
     "main": [
       "net.betterfishing.fabric.BetterFishingModFabric"
+    ],
+    "client": [
+      "net.betterfishing.fabric.BetterFishingModFabricClient"
     ]
   },
   "mixins": [

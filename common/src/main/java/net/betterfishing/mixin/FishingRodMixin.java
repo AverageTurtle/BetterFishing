@@ -17,8 +17,12 @@ public class FishingRodMixin {
 
     @Inject(at = @At("HEAD"), cancellable = true, method = "use(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResultHolder;")
     public void betterfishing$use(Level level, Player player, InteractionHand usedHand, CallbackInfoReturnable<InteractionResultHolder<ItemStack> > cir) {
-        ItemStack itemStack = player.getItemInHand(usedHand);
+        ItemStack itemInHand = player.getItemInHand(usedHand);
+
+        if (player.fishing != null) {
+
+        }
         BetterFishingMod.LOGGER.info("Fishing!");
-        cir.setReturnValue( InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide()) );
+        cir.setReturnValue( InteractionResultHolder.sidedSuccess(itemInHand, level.isClientSide()) );
     }
 }
