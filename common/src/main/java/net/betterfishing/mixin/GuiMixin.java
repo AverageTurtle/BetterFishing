@@ -29,14 +29,13 @@ public class GuiMixin {
     @Shadow
     private int screenHeight;
 
-    private static final ResourceLocation BACKGROUND_SPRITE = new ResourceLocation(BetterFishingMod.MOD_ID, "fishing_game/background");
+    private static final ResourceLocation BACKGROUND_SPRITE = new ResourceLocation(BetterFishingMod.MOD_ID, "textures/gui/fishing_game/background.png");
 
     @Inject(at = @At("TAIL"), method = "renderHotbar")
     private void betterfishing$renderHotbar(float partialTick, GuiGraphics guiGraphics, CallbackInfo ci) {
         final Player player = minecraft.player;
         if(player == null)
             return;
-
         ItemStack stack =  ItemStack.EMPTY;
         if (!player.getMainHandItem().isEmpty() && player.getMainHandItem().getItem() == Items.FISHING_ROD) {
             stack = player.getMainHandItem();
@@ -46,7 +45,7 @@ public class GuiMixin {
 
         if(stack != ItemStack.EMPTY) {
             guiGraphics.drawString(minecraft.font, "Hello from BetterFishing!", 20, 20, 0xFFFFFF);
-            guiGraphics.blitSprite(BACKGROUND_SPRITE, ((this.screenWidth - 16) / 2)-20, (this.screenHeight - 96) / 2,  16, 96);
+            guiGraphics.blit(BACKGROUND_SPRITE, ((this.screenWidth - 16) / 2)-20, (this.screenHeight - 96) / 2, 0, 0, 16, 96, 16, 96);
         }
 
     }
